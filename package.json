@@ -1,0 +1,21 @@
+{
+  "name": "twentyfivetolife",
+  "version": "0.0.0",
+  "description": "A project for fun",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tearingItUp786/twentyfivetolife.git"
+  },
+  "author": "Taran Bains",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/tearingItUp786/twentyfivetolife/issues"
+  },
+  "devDependencies": {
+    "grunt": "~1.0.1"
+  }
+}
