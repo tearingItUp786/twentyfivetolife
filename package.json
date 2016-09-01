@@ -16,6 +16,12 @@
     "url": "https://github.com/tearingItUp786/twentyfivetolife/issues"
   },
   "devDependencies": {
-    "grunt": "~1.0.1"
+    "grunt": "~1.0.1",
+    "grunt-sass": "~1.2.1",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-jekyll": "~0.4.4",
+    "grunt-responsive-images": "~0.1.9",
+    "grunt-contrib-cssmin": "~1.0.2",
+    "grunt-browser-sync": "~2.2.0"
   }
 }

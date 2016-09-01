@@ -12,18 +12,18 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    'css/main.css': 'scss/main.scss'
+                    'css/main.css': '_sass/app.sass'
                 }
             }
         },
 
         watch: {
             sass: {
-                files: 'scss/**/*.scss',
+                files: '_sass/**/*.sass',
                 tasks: ['sass']
             },
             jekyll: {
-                files: ['_layouts/*.html', '_includes/*.html', 'css/*', 'js/*.js', 'index.html', ],
+                files: ['_layouts/*.html', '_includes/*.html','_posts/*', 'css/*', 'js/*.js', 'index.html', ],
                 tasks: ['jekyll']
             }
         },
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
                 server: {
                     baseDir: '_site'
                 },
-                port: 8080
+                port: 5000
             }
         },
         responsive_images: {
@@ -77,17 +77,6 @@ module.exports = function(grunt) {
                     'css/main.min.css': ['css/main.css'],
                 }
             }
-        },
-        uglify: {
-            my_target: {
-                options: {
-                    sourceMap: true,
-                    sourceMapName: 'js/sourcemap.map'
-                },
-                files: {
-                    'js/app.min.js': ['js/app.js']
-                }
-            }
         }
 
     });
@@ -99,7 +88,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-browser-sync');
     grunt.loadNpmTasks('grunt-responsive-images');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Custom tasks
     grunt.registerTask('build', ['sass', 'jekyll']);
