@@ -1,13 +1,14 @@
 ---
 layout: default
 ---
-<div class="test">
-{% for post in site.posts %}
-    <a class="dog" href="{{post.url}}">{{post.title}}</a>
-{% endfor %}
-</div>
-
-<div class="testy">
-  <a href="{{ "about.html" | prepend: site.baseurl }}" class="blah">About</a>
-</div>
-<div class="bro"></div>
+<nav class="nav">
+    <ul class="nav-ul">
+        <li><a href="#about">About</a></li>
+        <li><a href="#history">History</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+    </ul>
+</nav>
+<section class="main">
+    {% include about.html %} {% include history.html %} {% include events.html %} {% include sponsors.html %}
+</section>
