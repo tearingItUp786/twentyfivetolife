@@ -21,15 +21,18 @@
 //     }
 //     e.stopPropagation();
 // }, false);
-window.addEventListener('hashchange', function() {
+window.addEventListener('hashchange', function(e) {
     console.log('this view\'s id is ', location.hash.substr(1));
     var current_view = document.querySelector("a[href='" + location.hash + "']");
-    var nav_ul = document.querySelector('.nav-ul');
-
-    for (var i = 0; i < nav_ul.children.length; i++) {
-      if(nav_ul.children[i].firstChild.classList.contains('active')){
-        nav_ul.children[i].firstChild.classList.remove('active');
-      }
-    }
+    removeNavActive();
     current_view.classList.add("active");
 });
+
+var removeNavActive = function() {
+    var nav_ul = document.querySelector('.nav-ul');
+    for (var i = 0; i < nav_ul.children.length; i++) {
+        if (nav_ul.children[i].firstChild.classList.contains('active')) {
+            nav_ul.children[i].firstChild.classList.remove('active');
+        }
+    }
+};

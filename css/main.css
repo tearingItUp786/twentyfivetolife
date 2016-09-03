@@ -1,3 +1,9 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -364,17 +370,44 @@ textarea {
   font: inherit;
   /* 2 */ }
 
+html,
+body {
+  height: 100%;
+  width: 100%; }
+
+body {
+  font-size: calc(1em + 1vw); }
+
 .nav ul {
-  list-style-type: none; }
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  list-style-type: none;
+  margin-top: 0;
+  padding: 20px 0; }
+  .nav ul::after {
+    clear: both;
+    content: "";
+    display: block; }
   .nav ul .active {
     color: pink; }
-  .nav ul li a {
-    color: black;
-    text-decoration: none; }
+  .nav ul li {
+    float: left;
+    display: block;
+    margin-right: 5.8515062746%;
+    width: 15.3187949803%;
+    text-align: center; }
+    .nav ul li:last-child {
+      margin-right: 0; }
+    .nav ul li a {
+      color: black;
+      text-decoration: none; }
 
 .main * {
-  display: none;
-  padding: 50px; }
+  display: none; }
+  .main *:last-child {
+    display: block; }
 
 @keyframes pulse {
   0% {
@@ -389,3 +422,5 @@ textarea {
     animation-name: pulse;
     animation-timing-function: ease-in-out;
     display: block; }
+    .main *:target ~ * {
+      display: none; }
