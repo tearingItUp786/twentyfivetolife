@@ -23,13 +23,8 @@
 // }, false);
 window.onload = function() {
     addActiveClassToNav();
-    $('.nav-ul').on('mouseenter', 'li', function(e) {
-        $(this).addClass('hover');
-    });
-    $('.nav-ul').on('mouseleave', 'li', function(e) {
-        $(this).removeClass('hover');
-    });
 };
+
 window.addEventListener('hashchange', function() {
     addActiveClassToNav();
 });
