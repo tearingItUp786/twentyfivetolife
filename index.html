@@ -1,15 +1,7 @@
 ---
 layout: default
 ---
-<nav class="nav">
-    <ul class="nav-ul">
-        <li><a href="#about">About</a></li>
-        <li><a href="#history">History</a></li>
-        <li><a href="#home">Logo</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#sponsors">Sponsors</a></li>
-    </ul>
-</nav>
+{% include navbar.html %}
 <section class="main">
     {% include about.html %} {% include history.html %} {% include events.html %} {% include sponsors.html %} {% include default.html %}
 </section>
