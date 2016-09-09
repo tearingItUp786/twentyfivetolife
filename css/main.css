@@ -573,12 +573,15 @@ body {
 @media screen and (max-width: 720px) {
   .nav {
     position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
+    max-height: 375px;
     z-index: 1;
-    transition: transform linear .5s;
+    transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 0.8s;
     transform: translateX(-150%); }
     .nav .nav-ul {
       height: auto;
@@ -608,13 +611,13 @@ body {
       align-items: baseline;
       -ms-flex-align: baseline; }
       .nav .nav-ul .nav-item {
-        padding: 45px 45px 20px 0;
+        padding: 20px 0;
         text-align: left;
         width: 100%; }
         .nav .nav-ul .nav-item a {
-          padding: 45px 95% 20px 0; }
+          padding: 20px 95% 20px 0; }
         .nav .nav-ul .nav-item a:last-of-type {
-          padding: 45px 95% 20px 0; }
+          padding: 20px 95% 20px 0; }
       .nav .nav-ul .logo {
         border-bottom: solid 1px #000; }
       .nav .nav-ul .active {
