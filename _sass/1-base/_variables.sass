@@ -8,14 +8,11 @@ $off-white: #f5f5f5
 $dark-grey: #333
 $footer-text: #808080
 
-@mixin bp-large
-  @media only screen and (max-width: 60em)
-    @content
+$mobile-size: 320px
+$tablet-size: 720px
+$desktop-size: 960px
 
-@mixin bp-medium
-  @media only screen and (max-width: 50em)
-    @content
-
-@mixin bp-small
-  @media only screen and (max-width: 30em)
-    @content
+// Bourbon Neat Breakpoints
+$mobile: new-breakpoint(max-width $mobile-size 4)
+$tablet: new-breakpoint(max-width $tablet-size 8)
+$desktop: new-breakpoint(max-width $desktop-size 12)

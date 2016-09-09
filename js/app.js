@@ -1,29 +1,14 @@
-// var container = document.querySelector('.testy');
-// var bro = document.querySelector('.bro');
-//
-// container.addEventListener('click', function(e) {
-//     if (e.target !== e.currentTarget) {
-//         e.preventDefault();
-//         var aLink = e.target.getAttribute('href');
-//         history.pushState(null, null, aLink);
-//
-//         $.ajax({
-//             url: aLink,
-//             success: function(data) {
-//                 console.log(data);
-//                 bro.innerHTML = data;
-//             },
-//             error: function(jqXHR, textStatus, errorThrown) {
-//                 console.log(textStatus, errorThrown);
-//                 alert('Failed');
-//             }
-//         });
-//     }
-//     e.stopPropagation();
-// }, false);
-window.onload = function() {
+$(document).ready(function() {
     addActiveClassToNav();
-};
+    $('.nav-toggle').click(function(e) {
+        e.preventDefault();
+        toggleNavbar();
+    });
+
+    $('.nav-ul').on('click', 'li', function(e) {
+      toggleNavbar();
+    });
+});
 
 window.addEventListener('hashchange', function() {
     addActiveClassToNav();
@@ -46,5 +31,15 @@ var addActiveClassToNav = function() {
         var current_view = document.querySelector("a[href='" + location.hash + "']").parentElement;
         removeNavActive();
         current_view.classList.add("active");
+    }
+};
+
+var toggleNavbar = function() {
+    if ($('.nav').hasClass('open')) {
+        $('.nav').removeClass('open');
+        $('.mobile-nav-toggle').removeClass('active-nav-button');
+    } else {
+        $('.nav').addClass('open');
+        $('.mobile-nav-toggle').addClass('active-nav-button');
     }
 };
