@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    addActiveClassToNav();
     if (location.hash === "" || location.hash === "#home") {
         $('.home').addClass('open');
     } else if (location.hash === "#about") {
@@ -21,6 +22,7 @@ $(document).ready(function() {
         } else if (location.hash === '#sponsors') {
             $('.sponsors').addClass('open');
         }
+        addActiveClassToNav();
     });
 
     var removeOpenFromSection = function() {
@@ -42,6 +44,15 @@ $(document).ready(function() {
             $('.sponsors').addClass('open');
         }
     });
+
+    $('.nav-toggle').click(function(e) {
+        e.preventDefault();
+        toggleNavbar();
+    });
+
+    $('.nav-ul').on('click', 'li', function(e) {
+        toggleNavbar();
+    });
 });
 
 // $(document).ready(function() {
@@ -60,32 +71,33 @@ $(document).ready(function() {
 //     addActiveClassToNav();
 // });
 //
-// var removeNavActive = function() {
-//     var nav_ul = document.querySelector('.nav-ul');
-//     for (var i = 0; i < nav_ul.children.length; i++) {
-//         if (nav_ul.children[i].firstChild.classList.contains('active')) {
-//             nav_ul.children[i].firstChild.classList.remove('active');
-//         }
-//         if (nav_ul.children[i].classList.contains('active')) {
-//             nav_ul.children[i].classList.remove('active');
-//         }
-//     }
-// };
-//
-// var addActiveClassToNav = function() {
-//     if (location.hash !== "") {
-//         var current_view = document.querySelector("a[href='" + location.hash + "']").parentElement;
-//         removeNavActive();
-//         current_view.classList.add("active");
-//     }
-// };
-//
-// var toggleNavbar = function() {
-//     if ($('.nav').hasClass('open')) {
-//         $('.nav').removeClass('open');
-//         $('.mobile-nav-toggle').removeClass('active-nav-button');
-//     } else {
-//         $('.nav').addClass('open');
-//         $('.mobile-nav-toggle').addClass('active-nav-button');
-//     }
-// };
+var removeNavActive = function() {
+    $('.nav-ul li').each(function(e) {
+        $(this).removeClass('active');
+    })
+};
+
+var addActiveClassToNav = function() {
+    if (location.hash !== null) {
+        removeNavActive();
+        if (location.hash === "#about") {
+            $('#nav-about').addClass('active');
+        } else if (location.hash === "#history") {
+            $('#nav-history').addClass('active');
+        } else if (location.hash === '#sponsors') {
+            $('#nav-sponsors').addClass('active');
+        } else if (location.hash === '#events') {
+            $('#nav-events').addClass('active');
+        }
+    }
+};
+
+var toggleNavbar = function() {
+    if ($('.nav').hasClass('open')) {
+        $('.nav').removeClass('open');
+        $('.mobile-nav-toggle').removeClass('active-nav-button');
+    } else {
+        $('.nav').addClass('open');
+        $('.mobile-nav-toggle').addClass('active-nav-button');
+    }
+};

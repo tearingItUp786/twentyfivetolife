@@ -630,10 +630,10 @@ body {
       .nav .nav-ul .logo > a > svg {
         display: none; }
   .mobile-nav-toggle {
-    top: 20px;
-    left: 20px;
+    top: 0;
+    left: 0;
     display: block;
-    position: fixed;
+    position: absolute;
     z-index: 4;
     height: 50px;
     width: 80px;
