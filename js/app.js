@@ -1,4 +1,5 @@
 $(document).ready(function() {
+<<<<<<< HEAD
     addActiveClassToNav();
     openAppropriateDiv(location.hash);
 
@@ -90,4 +91,35 @@ var toggleNavbar = function() {
         $('.nav').addClass('open');
         $('.mobile-nav-toggle').addClass('active-nav-button');
     }
+=======
+    var navbar = document.querySelector('.nav-ul');
+    var content = document.querySelector('.main');
+
+    navbar.addEventListener('click', function(e) {
+
+        if (e.target !== e.currentTarget) {
+            e.preventDefault();
+            var aLink = e.target.getAttribute('href');
+            var data = aLink.replace(".html", "");
+            data = data.replace("/", "");
+
+            history.pushState(data, null, aLink);
+            requestContent(aLink);
+        }
+        e.stopPropagation();
+    }, false);
+
+    window.addEventListener('popstate', function(e) {
+        var page = e.state;
+        if (page !== null) {
+            requestContent(page + ".html");
+        }
+    });
+});
+
+var requestContent = function(file) {
+    $.get(file, function(data) {
+        $('.main').html(data);
+    });
+>>>>>>> f6b23b29db17f6244c31da03dce2a22eb4622ebb
 };

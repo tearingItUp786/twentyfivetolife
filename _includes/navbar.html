@@ -1,10 +1,18 @@
 <nav class="nav">
     <ul class="nav-ul">
+<<<<<<< HEAD
         <li id="nav-about" class="nav-item left"><a href="#about">About</a></li>
         <li id="nav-history" class="nav-item left"><a href="#history">History</a></li>
         <li id="nav-home" class="nav-item logo"><a href="#home"><span class="hidden-home">Home</span>{% include 25toLife_logo_dots.svg %}</a></li>
         <li id="nav-events" class="nav-item right"><a href="#events">Events</a></li>
         <li id="nav-sponsors" class="nav-item right"><a href="#sponsors">Sponsors</a></li>
+=======
+        <li class="nav-item left"><a href="{{ "about.html" | prepend: site.baseurl }}">About</a></li>
+        <li class="nav-item left"><a href="{{ "history.html" | prepend: site.baseurl }}">History</a></li>
+        <li class="nav-item logo"><a href="{{ "home.html" | prepend: site.baseurl }}"><span class="hidden-home">Home</span>{% include 25toLife_logo_dots.svg %}</a></li>
+        <li class="nav-item right"><a href="{{ "events.html" | prepend: site.baseurl }}">Events</a></li>
+        <li class="nav-item right"><a href="{{ "sponsors.html" | prepend: site.baseurl }}">Sponsors</a></li>
+>>>>>>> f6b23b29db17f6244c31da03dce2a22eb4622ebb
     </ul>
 </nav>
 <div class="mobile-nav-toggle"><span></span>
