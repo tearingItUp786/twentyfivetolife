@@ -1,48 +1,19 @@
 $(document).ready(function() {
     addActiveClassToNav();
-    if (location.hash === "" || location.hash === "#home") {
-        $('.home').addClass('open');
-    } else if (location.hash === "#about") {
-        $('.about').addClass('open');
-    } else if (location.hash === "#history") {
-        $('.history').addClass('open');
-    } else if (location.hash === '#sponsors') {
-        $('.sponsors').addClass('open');
-    }
+    openAppropriateDiv(location.hash);
+
     $('.nav-ul li').on('click', 'a', function(e) {
         e.preventDefault();
         removeOpenFromSection();
         history.pushState(null, null, $(this).attr('href'));
-        if (location.hash === "" || location.hash === "#home") {
-            $('.home').addClass('open');
-        } else if (location.hash === "#about") {
-            $('.about').addClass('open');
-        } else if (location.hash === "#history") {
-            $('.history').addClass('open');
-        } else if (location.hash === '#sponsors') {
-            $('.sponsors').addClass('open');
-        }
+        openAppropriateDiv(location.hash);
         addActiveClassToNav();
     });
-
-    var removeOpenFromSection = function() {
-        $('.main div').each(function() {
-            $(this).removeClass('open');
-        });
-    };
 
     window.addEventListener('popstate', function(e) {
         console.log("popped");
         removeOpenFromSection();
-        if (location.hash === "" || location.hash === "#home") {
-            $('.home').addClass('open');
-        } else if (location.hash === "#about") {
-            $('.about').addClass('open');
-        } else if (location.hash === "#history") {
-            $('.history').addClass('open');
-        } else if (location.hash === '#sponsors') {
-            $('.sponsors').addClass('open');
-        }
+        openAppropriateDiv(location.hash);
     });
 
     $('.nav-toggle').click(function(e) {
@@ -55,32 +26,18 @@ $(document).ready(function() {
     });
 });
 
-// $(document).ready(function() {
-//     addActiveClassToNav();
-//     $('.nav-toggle').click(function(e) {
-//         e.preventDefault();
-//         toggleNavbar();
-//     });
-//
-//     $('.nav-ul').on('click', 'li', function(e) {
-//       toggleNavbar();
-//     });
-// });
-//
-// window.addEventListener('hashchange', function() {
-//     addActiveClassToNav();
-// });
-//
 var removeNavActive = function() {
     $('.nav-ul li').each(function(e) {
         $(this).removeClass('active');
-    })
+    });
 };
 
 var addActiveClassToNav = function() {
     if (location.hash !== null) {
         removeNavActive();
-        if (location.hash === "#about") {
+        if (location.hash === "" || location.hash === "#home") {
+            $('#nav-home').addClass('active');
+        } else if (location.hash === "#about") {
             $('#nav-about').addClass('active');
         } else if (location.hash === "#history") {
             $('#nav-history').addClass('active');
@@ -90,6 +47,39 @@ var addActiveClassToNav = function() {
             $('#nav-events').addClass('active');
         }
     }
+};
+
+var openAppropriateDiv = function(hashValue) {
+    switch (hashValue) {
+        case "#home":
+            $('.home').addClass('open');
+            break;
+
+        case "#about":
+            $('.about').addClass('open');
+            break;
+
+        case "#history":
+            $('.history').addClass('open');
+            break;
+
+        case "#sponsors":
+            $('.sponsors').addClass('open');
+            break;
+
+        case "#events":
+            $('.events').addClass('open');
+            break;
+
+        default:
+            $('.home').addClass('open');
+    }
+};
+
+var removeOpenFromSection = function() {
+    $('.main div').each(function() {
+        $(this).removeClass('open');
+    });
 };
 
 var toggleNavbar = function() {

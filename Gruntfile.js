@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 
         watch: {
             sass: {
-                files: '_sass/**/*.sass',
+                files: '_sass/**/*',
                 tasks: ['sass']
             },
             jekyll: {
