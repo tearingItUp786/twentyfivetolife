@@ -5,17 +5,29 @@ layout: default
 <section class="main">
     {% include about.html %} {% include history.html %} {% include events.html %} {% include sponsors.html %} {% include default.html %}
 </section>
-<div style="height: 2000px">
+<div class="events-section">
+  <h5 class="events-sep"><span>events</span></h5>
   <ul id="hexGrid">
-    {% for i in (1..11) %}
+    {% assign amount = 0 %}
+    {% for posts in site.posts %}
+      <li class="hex">
+          <a class="hexIn" href="#">
+              <img src="https://farm9.staticflickr.com/8461/8048823381_0fbc2d8efb.jpg" alt="" />
+              <h1>This is a title</h1>
+              <p>Some sample text about the article this hexagon leads to</p>
+          </a>
+      </li>
+      {% capture amount %}{{ amount | plus:1 }}{% endcapture %}
+    {% endfor %}
+    {% for num in (amount..10) %}
     <li class="hex">
         <a class="hexIn" href="#">
-            <img src="https://farm9.staticflickr.com/8461/8048823381_0fbc2d8efb.jpg" alt="" />
+            <img src="http://placekitten.com/g/400/400" alt="" />
             <h1>This is a title</h1>
             <p>Some sample text about the article this hexagon leads to</p>
         </a>
     </li>
+    {% capture amount %}{{ amount | plus:1 }}{% endcapture %}
     {% endfor %}
-
-        </ul>
+  </ul>
 </div>
