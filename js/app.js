@@ -1,14 +1,13 @@
 var lastWindowY = 0,
     evStart = document.querySelector('.events-section'),
-    ticking = false,
-    checkingWindowScroll = false;
+    ticking = false;
 
 $(document).ready(function() {
     window.scrollTo(0, 0);
     addActiveClassToNav();
     openAppropriateDiv(location.hash);
 
-    $('.nav-ul li').on('click', 'a', function(e) {
+    $('.nav-ul').on('click', 'a', function(e) {
         e.preventDefault();
         removeOpenFromSection();
         history.pushState(null, null, $(this).attr('href'));
@@ -99,25 +98,14 @@ var toggleNavbar = function() {
     }
 };
 
-function doSomething(callback) {
+function doSomething() {
     if (checkVisible(evStart)) {
-        console.log("In view");
-        callback();
+        console.log("In do something");
+        displayHex();
+        ticking = true;
     }
 }
 
-window.addEventListener('scroll', function(e) {
-    if (checkingWindowScroll) return;
-    last_known_scroll_position = window.scrollY;
-    if (!ticking) {
-        checkingWindowScroll = true;
-        window.requestAnimationFrame(function() {
-            doSomething(displayHex);
-            ticking = false;
-        });
-    }
-    ticking = true;
-});
 
 
 function checkVisible(elm) {
@@ -136,3 +124,5 @@ function displayHex() {
 
     if (visibileHex < li.length) setTimeout(displayHex, elementHasClass ? 0 : 200);
 }
+
+window.addEventListener('scroll', _.once(doSomething));

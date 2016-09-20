@@ -3,6 +3,19 @@
 {% include head.html %}
 <body>
   <h1>{{page.title}}</h1>
-  {{content}}
+  <p>{{page.description}}</p>
+  <div><img src="{{page.image}}" alt=""></div>
+  <table>
+    {% for detail in page.details %}
+
+    <tr><th>Where</th><td>{{detail.where}}</td></tr>
+    <tr><th>When</th><td>{{detail.when}}</td></tr>
+    <tr><th>Join</th><td>{{detail.join}}</td></tr>
+    <tr><th>Donate</th><td>{{detail.donate}}</td></tr>
+    <tr><th>Entrance</th><td>{{detail.entrance}}</td></tr>
+
+
+    {% endfor %}
+  </table>
 </body>
 </html>

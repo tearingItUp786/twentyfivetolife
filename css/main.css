@@ -492,7 +492,8 @@ body {
   padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  line-height: 1.4em; }
 
 .nav {
   max-width: 1200px;
@@ -710,15 +711,16 @@ body {
   padding-bottom: 50px; }
 
 .home .donate-now {
-  color: blue;
+  color: #0079c2;
   display: block;
   padding: 10px;
   text-align: center;
-  border: solid 1px black;
+  border: solid 1px #0079c2;
   background: #fff;
   width: 175px;
   margin: auto;
-  text-decoration: none; }
+  text-decoration: none;
+  background-color: #fff; }
 
 .footer {
   max-width: 1200px;
