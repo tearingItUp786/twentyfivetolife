@@ -833,7 +833,7 @@ body {
   /* prevent line on the right where background doesn't cover image */
   padding: 5%;
   box-sizing: border-box;
-  background-color: rgba(0, 128, 128, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   font-weight: 300;
   -webkit-transition: -webkit-transform 0.2s ease-out, opacity 0.3s ease-out;
   transition: transform 0.2s ease-out, opacity 0.3s ease-out; }
@@ -991,6 +991,18 @@ body {
   pointer-events: none;
   opacity: 0;
   transition: opacity 1s ease-in-out; }
+
+.upcoming h1 {
+  background-color: rgba(0, 121, 194, 0.8); }
+
+.upcoming p {
+  background-color: rgba(0, 121, 194, 0.8); }
+
+.completed h1 {
+  background-color: rgba(255, 222, 0, 0.8); }
+
+.completed p {
+  background-color: rgba(255, 222, 0, 0.8); }
 
 .hex-see {
   opacity: 1.0;

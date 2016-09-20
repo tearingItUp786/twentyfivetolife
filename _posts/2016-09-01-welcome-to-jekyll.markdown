@@ -1,7 +1,7 @@
 ---
 layout: event
 title:  "Test Event"
-categories: Upcoming
+categories: completed
 ---
 # brodown
 
