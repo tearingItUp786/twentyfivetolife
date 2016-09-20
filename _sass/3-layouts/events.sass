@@ -1,0 +1,39 @@
+.container
+  +outer-container
+  margin-top: 100px
+  .event-title
+    border-bottom: 1px solid black
+    padding-bottom: 10px
+    small
+      font-size: 65%
+  .content
+    @include media($desktop)
+      +span-columns(5)
+
+    table
+      border-collapse: collapse
+      width: 100%
+      th
+        border: 1px solid #dddddd
+        padding: 5px
+        text-align: left
+      td
+        border: 1px solid #dddddd
+        padding: 5px
+
+  .Wallop
+    @include media($desktop)
+      +shift(1)
+      +span-columns(6)
+
+  .Wallop-buttonPrevious
+    position: absolute
+    z-index: 5000
+    top: 50%
+    left: 0
+
+  .Wallop-buttonNext
+    z-index: 5001
+    position: absolute
+    top: 50%
+    right: 0

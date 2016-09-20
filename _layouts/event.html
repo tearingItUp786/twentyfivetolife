@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html>
-{% include head.html %}
+{% include head_event.html %}
+{% include navbar_event.html %}
 <body>
-  <h1>{{page.title}}</h1>
-  <p>{{page.description}}</p>
-  <div><img src="{{page.image}}" alt=""></div>
-  <table>
-    {% for detail in page.details %}
+  <div class="container">
+    <h1 class="event-title">{{page.title}} <small>{{page.subtitle}}</small></h1>
+    <div class="content">
+      <p class="event-description">{{page.description}}</p>
+      <table>
+        <tbody>
+        {% for detail in page.details %}
 
-    <tr><th>Where</th><td>{{detail.where}}</td></tr>
-    <tr><th>When</th><td>{{detail.when}}</td></tr>
-    <tr><th>Join</th><td>{{detail.join}}</td></tr>
-    <tr><th>Donate</th><td>{{detail.donate}}</td></tr>
-    <tr><th>Entrance</th><td>{{detail.entrance}}</td></tr>
+          <tr><th>Where</th><td>{{detail.where}}</td></tr>
+          <tr><th>When</th><td>{{detail.when}}</td></tr>
+          <tr><th>Join</th><td>{{detail.join}}</td></tr>
+          <tr><th>Donate</th><td>{{detail.donate}}</td></tr>
+          <tr><th>Entrance</th><td>{{detail.entrance}}</td></tr>
+        </tbody>
+        {% endfor %}
+      </table>
+    </div>
+    
+    <div class="Wallop Wallop--fade">
+      <div class="Wallop-list">
+        {% for image in page.images %}
+          <div class="Wallop-item"><img src="{{image.url}}" alt="{{image.alt}}" /></div>
+        {% endfor %}
+      </div>
+      <button class="Wallop-buttonPrevious">Back</button>
+      <button class="Wallop-buttonNext">Next</button>
+    </div>
+    </div>
+  </div>
 
-
-    {% endfor %}
-  </table>
+{% include footer_event.html %}
 </body>
 </html>

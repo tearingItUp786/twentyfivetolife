@@ -3,7 +3,6 @@ var lastWindowY = 0,
     ticking = false;
 
 $(document).ready(function() {
-    window.scrollTo(0, 0);
     addActiveClassToNav();
     openAppropriateDiv(location.hash);
 
@@ -99,16 +98,14 @@ var toggleNavbar = function() {
 };
 
 function doSomething() {
-    if (checkVisible(evStart)) {
-        console.log("In do something");
-        displayHex();
-        ticking = true;
-    }
+    console.log("in do something");
+    displayHex();
+    ticking = true;
 }
 
 
-
 function checkVisible(elm) {
+    console.log("Checking visble");
     var rect = elm.getBoundingClientRect();
     var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
     return !(rect.bottom < 0 || rect.top - viewHeight >= 40);
@@ -122,7 +119,13 @@ function displayHex() {
 
     li.eq(random).addClass('hex-see');
 
-    if (visibileHex < li.length) setTimeout(displayHex, elementHasClass ? 0 : 200);
+    if (visibileHex < li.length) setTimeout(displayHex, elementHasClass ? 0 : 300);
 }
 
-window.addEventListener('scroll', _.once(doSomething));
+var initDisplay = _.once(doSomething);
+
+window.addEventListener('scroll', function() {
+    if (checkVisible(evStart)) {
+        initDisplay();
+    }
+});

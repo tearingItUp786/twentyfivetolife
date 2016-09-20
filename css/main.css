@@ -477,7 +477,7 @@ html {
   padding-bottom: 0; }
   @media screen and (max-width: 720px) {
     html {
-      padding: 0; } }
+      padding: 20px; } }
 
 body {
   width: 100%;
@@ -592,7 +592,7 @@ body {
     overflow-x: hidden;
     top: 0;
     left: 0;
-    height: 400px;
+    height: 425px;
     width: 100%;
     max-height: 80%;
     z-index: 1;
@@ -642,10 +642,10 @@ body {
       .nav .nav-ul .logo > a > svg {
         display: none; }
   .mobile-nav-toggle {
-    top: 20px;
-    left: 20px;
+    top: 0;
+    left: 0;
     display: block;
-    position: fixed;
+    position: absolute;
     z-index: 4;
     height: 50px;
     width: 80px;
@@ -699,10 +699,10 @@ body {
     opacity: 1;
     transform: translateX(0); } }
 
-.home .welcome {
+.home .welcome, .about .welcome {
   text-align: center; }
 
-.home .info {
+.home .info, .about .info {
   width: 750px;
   max-width: 100%;
   margin-left: auto;
@@ -710,7 +710,7 @@ body {
   text-align: center;
   padding-bottom: 50px; }
 
-.home .donate-now {
+.home .donate-now, .about .donate-now {
   color: #0079c2;
   display: block;
   padding: 10px;
@@ -995,3 +995,55 @@ body {
 .hex-see {
   opacity: 1.0;
   pointer-events: auto; }
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px; }
+  .container::after {
+    clear: both;
+    content: "";
+    display: block; }
+  .container .event-title {
+    border-bottom: 1px solid black;
+    padding-bottom: 10px; }
+    .container .event-title small {
+      font-size: 65%; }
+  @media screen and (min-width: 60em) {
+    .container .content {
+      float: left;
+      display: block;
+      margin-right: 2.3576520234%;
+      width: 40.291369653%; }
+      .container .content:last-child {
+        margin-right: 0; } }
+  .container .content table {
+    border-collapse: collapse;
+    width: 100%; }
+    .container .content table th {
+      border: 1px solid #dddddd;
+      padding: 5px;
+      text-align: left; }
+    .container .content table td {
+      border: 1px solid #dddddd;
+      padding: 5px; }
+  @media screen and (min-width: 60em) {
+    .container .Wallop {
+      margin-left: 8.5298043353%;
+      float: left;
+      display: block;
+      margin-right: 2.3576520234%;
+      width: 48.8211739883%; }
+      .container .Wallop:last-child {
+        margin-right: 0; } }
+  .container .Wallop-buttonPrevious {
+    position: absolute;
+    z-index: 5000;
+    top: 50%;
+    left: 0; }
+  .container .Wallop-buttonNext {
+    z-index: 5001;
+    position: absolute;
+    top: 50%;
+    right: 0; }
