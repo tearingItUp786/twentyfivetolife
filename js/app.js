@@ -2,6 +2,15 @@ var lastWindowY = 0,
     evStart = document.querySelector('.events-section'),
     ticking = false;
 
+var moneyRaised = 15000,
+    totalToRaise = 30000,
+    firstDate = new Date("September 16, 2016"),
+    endDate = new Date("Decemeber 25, 2016"),
+    today = new Date(),
+    oneDay = 24 * 60 * 60 * 1000, // hours*minutes*seconds*milliseconds,
+    diffBetweenDays = Math.round(Math.abs((firstDate.getTime() - endDate.getTime()) / (oneDay))),
+    diffBetweenToday = Math.round(Math.abs((today.getTime() - endDate.getTime()) / (oneDay)));
+
 $(document).ready(function() {
     addActiveClassToNav();
     openAppropriateDiv(location.hash);
@@ -28,15 +37,6 @@ $(document).ready(function() {
     $('.nav-ul').on('click', 'li', function(e) {
         toggleNavbar();
     });
-    var moneyRasied = 15000
-    $('#circle').circleProgress({
-        value: (moneyRasied / 30000),
-        fill: {
-            color: "#0079c2"
-        }
-    }).on('circle-animation-progress', function(event, progress) {
-        $(this).find('strong').html(parseInt(moneyRasied));
-    });
 
 });
 
@@ -47,6 +47,7 @@ var addActiveClassToNav = function() {
             $('#nav-home').addClass('active');
         } else if (location.hash === "#about") {
             $('#nav-about').addClass('active');
+            animateGraphs(100, "#0079c2", (1 / 20));
         } else if (location.hash === "#history") {
             $('#nav-history').addClass('active');
         } else if (location.hash === '#sponsors') {
@@ -62,6 +63,50 @@ var removeNavActive = function() {
         $(this).removeClass('active');
     });
 
+};
+
+var animateGraphs = function(size, fill, thicknessRatio) {
+    $('.money-raised-graph').circleProgress({
+        value: (moneyRaised / totalToRaise),
+        size: size,
+        fill: {
+            color: fill
+        },
+        animation: {
+            duration: 2500
+        },
+        thickness: (thicknessRatio * size)
+    }).on('circle-animation-progress', function(event, progress) {
+        $(this).find('strong').html('$' + parseInt(moneyRaised));
+    });
+
+    $('.number-of-events-graph').circleProgress({
+        value: (0),
+        size: size,
+        fill: {
+            color: fill
+        },
+        animation: {
+            duration: 2500
+        },
+        thickness: (thicknessRatio * size)
+    }).on('circle-animation-progress', function(event, progress, value) {
+        $(this).find('strong').html(value + '/' + 9);
+    });
+
+    $('.days-left').circleProgress({
+        value: 1 - (diffBetweenToday / diffBetweenDays),
+        size: size,
+        fill: {
+            color: fill
+        },
+        animation: {
+            duration: 2500
+        },
+        thickness: (thicknessRatio * size)
+    }).on('circle-animation-progress', function(event, progress) {
+        $(this).find('strong').html(diffBetweenToday);
+    });
 };
 
 var removeOpenFromSection = function() {

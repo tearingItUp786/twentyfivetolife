@@ -494,6 +494,10 @@ body {
   padding-bottom: 0;
   line-height: 1.4em; }
 
+p {
+  font-weight: 400;
+  color: #333; }
+
 .nav {
   max-width: 1200px;
   margin-left: auto;
@@ -708,6 +712,9 @@ body {
   margin-right: auto;
   text-align: center;
   padding-bottom: 50px; }
+  @media screen and (max-width: 480px) {
+    .home .info, .about .info {
+      padding-bottom: 0; } }
 
 .home .donate-now, .about .donate-now {
   color: #0079c2;
@@ -736,6 +743,91 @@ body {
   .footer h4 {
     margin: 0; }
 
+.graphs {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px; }
+  .graphs::after {
+    clear: both;
+    content: "";
+    display: block; }
+  .graphs .circle {
+    position: relative; }
+    @media screen and (min-width: 1050px) {
+      .graphs .circle {
+        float: left;
+        display: block;
+        margin-right: 2.3576520234%;
+        width: 14.7019566472%; }
+        .graphs .circle:last-child {
+          margin-right: 0; } }
+    @media screen and (max-width: 1049px) {
+      .graphs .circle {
+        float: left;
+        display: block;
+        margin-right: 2.3576520234%;
+        width: 23.2317609825%;
+        margin-left: 8.5298043353%;
+        margin-right: 0; }
+        .graphs .circle:last-child {
+          margin-right: 0; } }
+    @media screen and (max-width: 720px) {
+      .graphs .circle {
+        float: left;
+        display: block;
+        margin-right: 2.3576520234%;
+        width: 14.7019566472%; }
+        .graphs .circle:last-child {
+          margin-right: 0; } }
+    @media screen and (max-width: 480px) {
+      .graphs .circle {
+        float: left;
+        display: block;
+        margin-right: 7.4229717578%;
+        width: 100%;
+        margin-left: 0%;
+        margin-top: 50px; }
+        .graphs .circle:last-child {
+          margin-right: 0; } }
+    .graphs .circle canvas {
+      max-width: 300px;
+      width: 100%;
+      height: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto; }
+    .graphs .circle strong {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center; }
+    .graphs .circle p {
+      color: #808080;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 100%;
+      margin: 0;
+      padding-top: 5px;
+      text-align: center;
+      transform: translate(-50%, 0%);
+      line-height: 1.2em;
+      font-size: 0.75em; }
+  @media screen and (min-width: 1050px) {
+    .graphs .money-raised-graph {
+      margin-left: 25.5894130058%; } }
+  @media screen and (max-width: 480px) {
+    .graphs .money-raised-graph {
+      margin-left: 0%; } }
+  @media screen and (max-width: 720px) {
+    .graphs .money-raised-graph {
+      margin-left: 17.0596086706%; } }
+  @media screen and (max-width: 480px) {
+    .graphs .money-raised-graph {
+      margin-left: 0%; } }
+
 .main {
   max-width: 1200px;
   margin-left: auto;
@@ -751,7 +843,7 @@ body {
   0% {
     transform: scale(1); }
   50% {
-    transform: scale(1.1); }
+    transform: scale(1.05); }
   100% {
     transform: scale(1); } }
 
@@ -1000,15 +1092,24 @@ body {
     .events-section .hex h1 {
       line-height: 1em; }
     .events-section .hex p {
+      color: white;
       line-height: 1em; }
   .events-section .upcoming h1 {
-    background-color: rgba(0, 121, 194, 0.8); }
+    background-color: rgba(0, 121, 194, 0.8);
+    color: #000; }
+  .events-section .upcoming h1:after {
+    border-bottom-color: #000; }
   .events-section .upcoming p {
-    background-color: rgba(0, 121, 194, 0.8); }
+    background-color: rgba(0, 121, 194, 0.8);
+    color: #000; }
   .events-section .completed h1 {
-    background-color: rgba(255, 222, 0, 0.8); }
+    background-color: rgba(255, 222, 0, 0.8);
+    color: #000; }
+  .events-section .completed h1:after {
+    border-bottom-color: #000; }
   .events-section .completed p {
-    background-color: rgba(255, 222, 0, 0.8); }
+    background-color: rgba(255, 222, 0, 0.8);
+    color: #000; }
   .events-section .hex-see {
     opacity: 1.0;
     pointer-events: auto; }
@@ -1027,7 +1128,7 @@ body {
     padding-bottom: 10px; }
     .container .event-title small {
       font-size: 65%; }
-  @media screen and (min-width: 60em) {
+  @media screen and (max-width: 1049px) {
     .container .content {
       float: left;
       display: block;
@@ -1045,7 +1146,7 @@ body {
     .container .content table td {
       border: 1px solid #dddddd;
       padding: 5px; }
-  @media screen and (min-width: 60em) {
+  @media screen and (max-width: 1049px) {
     .container .Wallop {
       margin-left: 8.5298043353%;
       float: left;
