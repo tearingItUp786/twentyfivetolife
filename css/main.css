@@ -482,7 +482,6 @@ html {
 body {
   width: 100%;
   min-height: 100%;
-  max-width: 1200px;
   box-sizing: border-box;
   position: relative;
   background-color: #f5f5f5;
@@ -777,7 +776,6 @@ body {
   width: 90%;
   margin: 0 auto;
   padding: 0.866% 0;
-  font-family: 'Raleway', sans-serif;
   font-size: 15px; }
 
 #hexGrid:after {
@@ -976,37 +974,44 @@ body {
   .hex:nth-child(3n+4) {
     clear: left; } }
 
-.events-sep {
-  width: 100%;
-  border-bottom: solid 1px;
-  line-height: 0.1em;
-  margin-bottom: 80px; }
-  .events-sep span {
-    padding: 0 10px 0 10px;
-    background: #f5f5f5;
-    margin-left: 20px;
-    font-style: italic; }
-
-.hex {
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 1s ease-in-out; }
-
-.upcoming h1 {
-  background-color: rgba(0, 121, 194, 0.8); }
-
-.upcoming p {
-  background-color: rgba(0, 121, 194, 0.8); }
-
-.completed h1 {
-  background-color: rgba(255, 222, 0, 0.8); }
-
-.completed p {
-  background-color: rgba(255, 222, 0, 0.8); }
-
-.hex-see {
-  opacity: 1.0;
-  pointer-events: auto; }
+.events-section {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  .events-section::after {
+    clear: both;
+    content: "";
+    display: block; }
+  .events-section .events-sep {
+    width: 100%;
+    border-bottom: solid 1px;
+    line-height: 0.1em;
+    margin-bottom: 80px; }
+    .events-section .events-sep span {
+      font-weight: 400;
+      padding: 0 10px 0 10px;
+      background: #f5f5f5;
+      margin-left: 20px;
+      font-style: italic; }
+  .events-section .hex {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; }
+    .events-section .hex h1 {
+      line-height: 1em; }
+    .events-section .hex p {
+      line-height: 1em; }
+  .events-section .upcoming h1 {
+    background-color: rgba(0, 121, 194, 0.8); }
+  .events-section .upcoming p {
+    background-color: rgba(0, 121, 194, 0.8); }
+  .events-section .completed h1 {
+    background-color: rgba(255, 222, 0, 0.8); }
+  .events-section .completed p {
+    background-color: rgba(255, 222, 0, 0.8); }
+  .events-section .hex-see {
+    opacity: 1.0;
+    pointer-events: auto; }
 
 .container {
   max-width: 1200px;

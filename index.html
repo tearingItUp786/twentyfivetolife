@@ -11,7 +11,7 @@ layout: default
 </section>
 
 <div class="events-section">
-  <h5 class="events-sep"><span>events</span></h5>
+  <h5 class="events-sep"><span>view our events</span></h5>
   <ul id="hexGrid">
     {% assign amount = 0 %}
     {% for post in site.posts %}
@@ -19,7 +19,7 @@ layout: default
           <a class="hexIn" href="{{ post.url | prepend: site.baseurl }}">
               <img src="https://farm9.staticflickr.com/8461/8048823381_0fbc2d8efb.jpg" alt="" />
               <h1>This is a title</h1>
-              <p>Some sample text about the article this hexagon leads to</p>
+              <p>Sample text</p>
           </a>
       </li>
       {% capture amount %}{{ amount | plus:1 }}{% endcapture %}

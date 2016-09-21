@@ -28,6 +28,16 @@ $(document).ready(function() {
     $('.nav-ul').on('click', 'li', function(e) {
         toggleNavbar();
     });
+    var moneyRasied = 15000
+    $('#circle').circleProgress({
+        value: (moneyRasied / 30000),
+        fill: {
+            color: "#0079c2"
+        }
+    }).on('circle-animation-progress', function(event, progress) {
+        $(this).find('strong').html(parseInt(moneyRasied));
+    });
+
 });
 
 var addActiveClassToNav = function() {
