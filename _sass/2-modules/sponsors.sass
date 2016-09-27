@@ -1,0 +1,23 @@
+.sponsors
+  +outer-container
+  .welcome
+    text-align: center
+  .hex-sponsor-container
+    padding-top: 50px
+    @include media($largedesktop)
+      +span-columns(8 of 12)
+      +shift(2)
+    @include media($tablet)
+      +span-columns(12)
+      +shift(0)
+
+    .hex-even
+      .hex-sponsor
+        @include media($largedesktop)
+          +span-columns(2 of 12)
+          +omega(6n)
+        @include media($tablet)
+          +span-columns(6 of 12)
+          +omega(2n)
+  .svg-graphic
+    width: 100%

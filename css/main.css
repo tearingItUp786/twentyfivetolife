@@ -837,6 +837,63 @@ p {
     content: "";
     display: block; }
 
+.sponsors {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  .sponsors::after {
+    clear: both;
+    content: "";
+    display: block; }
+  .sponsors .welcome {
+    text-align: center; }
+  .sponsors .hex-sponsor-container {
+    padding-top: 50px; }
+    @media screen and (min-width: 1050px) {
+      .sponsors .hex-sponsor-container {
+        float: left;
+        display: block;
+        margin-right: 2.3576520234%;
+        width: 65.8807826589%;
+        margin-left: 17.0596086706%; }
+        .sponsors .hex-sponsor-container:last-child {
+          margin-right: 0; } }
+    @media screen and (max-width: 720px) {
+      .sponsors .hex-sponsor-container {
+        float: left;
+        display: block;
+        margin-right: 2.3576520234%;
+        width: 100%;
+        margin-left: 0%; }
+        .sponsors .hex-sponsor-container:last-child {
+          margin-right: 0; } }
+    @media screen and (min-width: 1050px) {
+      .sponsors .hex-sponsor-container .hex-even .hex-sponsor {
+        float: left;
+        display: block;
+        margin-right: 2.3576520234%;
+        width: 14.7019566472%; }
+        .sponsors .hex-sponsor-container .hex-even .hex-sponsor:last-child {
+          margin-right: 0; }
+        .sponsors .hex-sponsor-container .hex-even .hex-sponsor:nth-child(6n) {
+          margin-right: 0; }
+        .sponsors .hex-sponsor-container .hex-even .hex-sponsor:nth-child(6n+1) {
+          clear: left; } }
+    @media screen and (max-width: 720px) {
+      .sponsors .hex-sponsor-container .hex-even .hex-sponsor {
+        float: left;
+        display: block;
+        margin-right: 2.3576520234%;
+        width: 48.8211739883%; }
+        .sponsors .hex-sponsor-container .hex-even .hex-sponsor:last-child {
+          margin-right: 0; }
+        .sponsors .hex-sponsor-container .hex-even .hex-sponsor:nth-child(2n) {
+          margin-right: 0; }
+        .sponsors .hex-sponsor-container .hex-even .hex-sponsor:nth-child(2n+1) {
+          clear: left; } }
+  .sponsors .svg-graphic {
+    width: 100%; }
+
 .main {
   max-width: 1200px;
   margin-left: auto;
@@ -1051,7 +1108,7 @@ p {
   .hex:nth-child(3n+4) {
     clear: left; } }
 
-@media (max-width: 400px) {
+@media (max-width: 599px) {
   #hexGrid {
     font-size: 13px; }
   .hex {

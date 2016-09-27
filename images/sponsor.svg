@@ -1,0 +1,11 @@
+<svg class="svg-graphic" width="200" height="100" viewBox="0 0 560 645" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <g>
+        <clipPath id="hex-mask">
+            <polygon points="270,0 0,160 0,485 270,645 560,485 560,160"></polygon>
+        </clipPath>
+    </g>
+    <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#" transform="">
+        <image class="telus" clip-path="url(#hex-mask)" height="100%" width="100%" xlink:href="http://placekitten.com/g/400/400" preserveAspectRatio="xMidYMin slice"></image>
+        <figcaption></figcaption>
+    </a>
+</svg>

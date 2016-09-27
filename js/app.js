@@ -43,6 +43,7 @@ $(document).ready(function() {
     $('.no-click').on('click', function(e) {
         e.preventDefault();
     });
+
 });
 
 var addActiveClassToNav = function() {

@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                 tasks: ['sass']
             },
             jekyll: {
-                files: ['_layouts/*.html', '_includes/*.html','_posts/*', 'css/*', 'js/*.js', 'index.html', ],
+                files: ['_layouts/*.html', '_includes/*','_posts/*', 'css/*', 'js/*.js', 'index.html', ],
                 tasks: ['jekyll']
             }
         },
@@ -52,18 +52,18 @@ module.exports = function(grunt) {
                     engine: 'im',
                     newFilesOnly: false,
                     sizes: [{
-                        namge: "small",
-                        width: '350px',
-                        height: '350px',
-                        aspectRatio: false
+                        name: "thumbnails",
+                        width: '175px',
+                        height: '200px',
+                        aspectRatio: true
                     }],
                     quality: 80
                 },
                 files: [{
                     expand: true,
-                    src: ['**.{JPG,gif,png}'],
-                    cwd: 'images/portfolio_originals/',
-                    dest: 'images/thumbnails/'
+                    src: ['**.{JPG,gif,png,jpg}'],
+                    cwd: 'images/sponsor_logos/',
+                    dest: 'images/sponsor_thumbnails/'
                 }]
             }
         },
