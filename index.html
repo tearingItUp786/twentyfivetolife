@@ -17,9 +17,9 @@ layout: default
     {% for post in site.posts %}
       <li class="hex {{post.categories}}">
           <a class="hexIn" href="{{ post.url | prepend: site.baseurl }}">
-              <img src="https://farm9.staticflickr.com/8461/8048823381_0fbc2d8efb.jpg" alt="" />
-              <h1>This is a title</h1>
-              <p>Sample text</p>
+              <img src="{{post.thumbnail}}" alt="" />
+              <h1>{{post.title}}</h1>
+              <p>{{post.event_date}}</p>
           </a>
       </li>
       {% capture amount %}{{ amount | plus:1 }}{% endcapture %}
@@ -27,8 +27,8 @@ layout: default
 
     {% for num in (amount..10) %}
     <li class="hex">
-        <a class="hexIn" href="#">
-            <img src="http://placekitten.com/g/400/400" alt="" />
+        <a class="hexIn no-click" href="">
+            <img src="/images/upcoming.svg" alt="" />
             <h1>This is a title</h1>
             <p>Some sample text about the article this hexagon leads to</p>
         </a>

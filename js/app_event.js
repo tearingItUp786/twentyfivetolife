@@ -11,8 +11,6 @@ $(document).ready(function() {
 
     $('#nav-events').addClass('active');
 
-    var wallopEl = document.querySelector('.Wallop');
-    var slider = new Wallop(wallopEl);
 });
 
 var toggleNavbar = function() {
@@ -24,3 +22,24 @@ var toggleNavbar = function() {
         $('.mobile-nav-toggle').addClass('active-nav-button');
     }
 };
+
+var wallopEl = document.querySelector('.Wallop');
+var slider = new Wallop(wallopEl);
+var carousel = window.setInterval(function() {
+    slider.next();
+}, 6000);
+
+var button = document.getElementsByTagName('button');
+console.log(button);
+for (var i = 0; i < button.length; i++) {
+    (function(currentI) {
+        console.log(button[currentI]);
+        button[currentI].addEventListener('click', function() {
+            clearInterval(carousel);
+            carousel = window.setInterval(function() {
+                slider.next();
+            }, 6000);
+        });
+    })(i);
+
+}

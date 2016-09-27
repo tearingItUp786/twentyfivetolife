@@ -7,9 +7,14 @@
     small
       font-size: 65%
   .content
+    @include media($largedesktop)
+      +span-columns(5 of 12)
     @include media($desktop)
-      +span-columns(5)
-
+      +span-columns(5 of 12)
+    @include media($tablet)
+      +span-columns(12 of 12)
+    a
+      text-decoration: none
     table
       border-collapse: collapse
       width: 100%
@@ -22,18 +27,36 @@
         padding: 5px
 
   .Wallop
+    @include media($largedesktop)
+      +shift(1)
+      +span-columns(6 of 12)
     @include media($desktop)
       +shift(1)
-      +span-columns(6)
+      +span-columns(6 of 12)
+    @include media($tablet)
+      +shift(0)
+      +span-columns(12 of 12)
 
   .Wallop-buttonPrevious
     position: absolute
     z-index: 5000
     top: 50%
     left: 0
+    background-color: white
+    cursor: pointer
+    border: solid 1px black
+
+  .Wallop-buttonPrevious::before
+    content: "\276E"
 
   .Wallop-buttonNext
     z-index: 5001
     position: absolute
     top: 50%
     right: 0
+    border: solid 1px black
+    cursor: pointer
+    background-color: white
+
+  .Wallop-buttonNext::before
+    content: "\276F"

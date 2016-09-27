@@ -1,3 +1,5 @@
+window.scrollTo(0, 0);
+
 var lastWindowY = 0,
     evStart = document.querySelector('.events-section'),
     ticking = false;
@@ -38,6 +40,9 @@ $(document).ready(function() {
         toggleNavbar();
     });
 
+    $('.no-click').on('click', function(e) {
+        e.preventDefault();
+    });
 });
 
 var addActiveClassToNav = function() {
@@ -73,7 +78,7 @@ var animateGraphs = function(size, fill, thicknessRatio) {
             color: fill
         },
         animation: {
-            duration: 2500
+            duration: 1500
         },
         thickness: (thicknessRatio * size)
     }).on('circle-animation-progress', function(event, progress) {
@@ -87,7 +92,7 @@ var animateGraphs = function(size, fill, thicknessRatio) {
             color: fill
         },
         animation: {
-            duration: 2500
+            duration: 1500
         },
         thickness: (thicknessRatio * size)
     }).on('circle-animation-progress', function(event, progress, value) {
@@ -101,7 +106,7 @@ var animateGraphs = function(size, fill, thicknessRatio) {
             color: fill
         },
         animation: {
-            duration: 2500
+            duration: 1500
         },
         thickness: (thicknessRatio * size)
     }).on('circle-animation-progress', function(event, progress) {

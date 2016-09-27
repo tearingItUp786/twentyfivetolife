@@ -477,7 +477,7 @@ html {
   padding-bottom: 0; }
   @media screen and (max-width: 720px) {
     html {
-      padding: 20px; } }
+      padding: 0; } }
 
 body {
   width: 100%;
@@ -828,6 +828,15 @@ p {
     .graphs .money-raised-graph {
       margin-left: 0%; } }
 
+.history {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  .history::after {
+    clear: both;
+    content: "";
+    display: block; }
+
 .main {
   max-width: 1200px;
   margin-left: auto;
@@ -1090,10 +1099,12 @@ p {
     opacity: 0;
     transition: opacity 1s ease-in-out; }
     .events-section .hex h1 {
-      line-height: 1em; }
+      line-height: 1em;
+      background-color: #000; }
     .events-section .hex p {
       color: white;
-      line-height: 1em; }
+      line-height: 1em;
+      background-color: #000; }
   .events-section .upcoming h1 {
     background-color: rgba(0, 121, 194, 0.8);
     color: #000; }
@@ -1128,6 +1139,14 @@ p {
     padding-bottom: 10px; }
     .container .event-title small {
       font-size: 65%; }
+  @media screen and (min-width: 1050px) {
+    .container .content {
+      float: left;
+      display: block;
+      margin-right: 2.3576520234%;
+      width: 40.291369653%; }
+      .container .content:last-child {
+        margin-right: 0; } }
   @media screen and (max-width: 1049px) {
     .container .content {
       float: left;
@@ -1136,6 +1155,16 @@ p {
       width: 40.291369653%; }
       .container .content:last-child {
         margin-right: 0; } }
+  @media screen and (max-width: 720px) {
+    .container .content {
+      float: left;
+      display: block;
+      margin-right: 2.3576520234%;
+      width: 100%; }
+      .container .content:last-child {
+        margin-right: 0; } }
+  .container .content a {
+    text-decoration: none; }
   .container .content table {
     border-collapse: collapse;
     width: 100%; }
@@ -1146,6 +1175,15 @@ p {
     .container .content table td {
       border: 1px solid #dddddd;
       padding: 5px; }
+  @media screen and (min-width: 1050px) {
+    .container .Wallop {
+      margin-left: 8.5298043353%;
+      float: left;
+      display: block;
+      margin-right: 2.3576520234%;
+      width: 48.8211739883%; }
+      .container .Wallop:last-child {
+        margin-right: 0; } }
   @media screen and (max-width: 1049px) {
     .container .Wallop {
       margin-left: 8.5298043353%;
@@ -1155,13 +1193,32 @@ p {
       width: 48.8211739883%; }
       .container .Wallop:last-child {
         margin-right: 0; } }
+  @media screen and (max-width: 720px) {
+    .container .Wallop {
+      margin-left: 0%;
+      float: left;
+      display: block;
+      margin-right: 2.3576520234%;
+      width: 100%; }
+      .container .Wallop:last-child {
+        margin-right: 0; } }
   .container .Wallop-buttonPrevious {
     position: absolute;
     z-index: 5000;
     top: 50%;
-    left: 0; }
+    left: 0;
+    background-color: white;
+    cursor: pointer;
+    border: solid 1px black; }
+  .container .Wallop-buttonPrevious::before {
+    content: "\276E"; }
   .container .Wallop-buttonNext {
     z-index: 5001;
     position: absolute;
     top: 50%;
-    right: 0; }
+    right: 0;
+    border: solid 1px black;
+    cursor: pointer;
+    background-color: white; }
+  .container .Wallop-buttonNext::before {
+    content: "\276F"; }
