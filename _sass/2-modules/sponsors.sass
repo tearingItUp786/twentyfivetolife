@@ -3,17 +3,24 @@
   .welcome
     text-align: center
   .hex-sponsor-container
-    padding-top: 50px
     @include media($largedesktop)
+      padding-top: 30px
+      +span-columns(8 of 12)
+      +shift(2)
+    @include media($desktop)
       +span-columns(8 of 12)
       +shift(2)
     @include media($tablet)
+      padding-top: 50px
       +span-columns(12)
       +shift(0)
 
     .hex-even
       .hex-sponsor
         @include media($largedesktop)
+          +span-columns(2 of 12)
+          +omega(6n)
+        @include media($desktop)
           +span-columns(2 of 12)
           +omega(6n)
         @include media($tablet)
