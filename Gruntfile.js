@@ -48,23 +48,33 @@ module.exports = function(grunt) {
         },
         responsive_images: {
             myTask: {
-                options: {
-                    engine: 'im',
-                    newFilesOnly: false,
-                    sizes: [{
-                        name: "thumbnails",
-                        width: '175px',
-                        height: '200px',
-                        aspectRatio: true
-                    }],
-                    quality: 80
-                },
-                files: [{
-                    expand: true,
-                    src: ['**.{JPG,gif,png,jpg}'],
-                    cwd: 'images/sponsor_logos/',
-                    dest: 'images/sponsor_thumbnails/'
-                }]
+              options: {
+                  engine: 'im',
+                  newFilesOnly: false,
+                  sizes: [{
+                      name: "large",
+                      width: '1920px',
+                      height: '1080px',
+                      aspectRatio: true
+                  }, {
+                      name: "medium",
+                      width: '1024px',
+                      height: '786px',
+                      aspectRatio: false
+                  }, {
+                      name: "small",
+                      width: '640',
+                      height: '480',
+                      aspectRatio: false
+                  }],
+                  quality: 90
+              },
+              files: [{
+                  expand: true,
+                  src: ['**.{JPG,gif,png,jpg}'],
+                  cwd: 'images/originals/',
+                  dest: 'images/'
+              }]
             }
         },
         cssmin: {

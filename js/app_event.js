@@ -11,6 +11,12 @@ $(document).ready(function() {
 
     $('#nav-events').addClass('active');
 
+    $(".rslides").responsiveSlides({
+      speed: 1000,
+      nav: true,
+      navContainer: ".rslides_container"
+    });
+
 });
 
 var toggleNavbar = function() {

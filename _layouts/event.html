@@ -21,18 +21,30 @@
       </table>
     </div>
 
-    <div class="Wallop Wallop--slide">
-      <div class="Wallop-list">
+    <div class="rslides_container">
+      <ul class="rslides">
         {% for image in page.images %}
-          <div class="Wallop-item"><img src="{{image.url}}" alt="{{image.alt}}" /></div>
+          <li><img src="{{image.url}}" alt=""></li>
         {% endfor %}
-      </div>
-      <button class="Wallop-buttonPrevious"></button>
-      <button class="Wallop-buttonNext"></button>
+      </ul>
     </div>
-    </div>
-  </div>
 
+</div>
+
+  <div class="related-projects">
+    <h3>Related Projects</h3>
+    {% assign counter = '0' %}
+    {% for post in site.categories.upcoming %}
+      {% if post.title != page.title and counter < '4'%}
+        <div class="project">
+          <a href="{{post.url}}">
+            <img src="{{post.thumbnail}}" alt="" />
+          </a>
+        </div>
+        {% capture counter %}{{ counter | plus:'1' }}{% endcapture %}
+      {% endif %}
+    {% endfor %}
+  </div>
 {% include footer_event.html %}
 </body>
 </html>
