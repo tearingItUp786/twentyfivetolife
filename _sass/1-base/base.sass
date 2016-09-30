@@ -16,7 +16,6 @@ body
   position: relative
   background-color: $off-white
   font-family: $font-stack
-  font-size: calc(1em + 1vw)
   margin: auto
   padding-top: 20px
   padding-left: 20px
@@ -24,6 +23,13 @@ body
   padding-bottom: 0
   line-height: 1.4em
 
+h1
+  font-size: +em(50px)
+  @include media($tablet)
+    font-size: +em(35px)
+
 p
-  font-weight: 400
-  color: $dark-grey
+  font-size: +em(25px)
+  line-height: 1.5em
+  @include media($tablet)
+    font-size: +em(20px)

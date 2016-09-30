@@ -36,6 +36,7 @@
       left: 50%
       transform: translate(-50%, -50%)
       text-align: center
+      font-size: +em(25px)
 
     p
       color: $light-grey
@@ -48,7 +49,7 @@
       text-align: center
       transform: translate(-50%, 0%)
       line-height: 1.2em
-      font-size: +em(12px)
+      font-size: +em(16px)
 
   .money-raised-graph
     @include media($largedesktop)
@@ -58,4 +59,5 @@
     @include media($tablet)
       +shift(2 of 12)
     @include media($mobile)
+      margin-top: 10px
       +shift(0)
