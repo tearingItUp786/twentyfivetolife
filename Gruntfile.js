@@ -100,8 +100,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     // Custom tasks
-    grunt.registerTask('build', ['sass', 'jekyll']);
+    grunt.registerTask('build', ['sass', 'cssmin', 'responsive_images', 'jekyll']);
     grunt.registerTask('default', ['build', 'browserSync', 'watch']);
     grunt.registerTask('resize', ['responsive_images']);
-    grunt.registerTask('min', ['cssmin', 'uglify']);
+    grunt.registerTask('min', ['cssmin']);
 };

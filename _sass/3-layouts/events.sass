@@ -4,6 +4,7 @@
   .event-title
     border-bottom: 1px solid black
     padding-bottom: 10px
+    line-height: 1.4em
     small
       font-size: 55%
       color: $light-grey
@@ -98,9 +99,18 @@
     border-bottom: 1px solid $light-grey
 
   .project
-    +span-columns(3 of 12)
-    &:last-of-type
-      +omega()
+    cursor: pointer
+    @include media($largedesktop)
+      +span-columns(3 of 12)
+      +omega(5n)
+    @include media($desktop)
+      +span-columns(3 of 12)
+      +omega(5n)
+    @include media($tablet)
+      +span-columns(6 of 12)
+      +omega(3n)
+    @include media($mobile)
+      +span-columns(6 of 12)
 
     img
       +size(100% auto)

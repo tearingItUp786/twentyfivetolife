@@ -4,7 +4,13 @@
 {% include navbar_event.html %}
 <body>
   <div class="container">
-    <h1 class="event-title">{{page.title}} <small>{{page.subtitle}}</small></h1>
+    <h1 class="event-title">
+      {% if page.categories contains 'completed' %}
+      <span style="color: red;">THIS EVENT HAS ALREADY PASSED</span> <br/>
+      {% endif %}
+      {{page.title}}
+      <small>{{page.subtitle}}</small>
+    </h1>
     <div class="content">
       <p class="event-description">{{page.description}}</p>
       <table>
@@ -32,13 +38,13 @@
 </div>
 
   <div class="related-projects">
-    <h3>Related Projects</h3>
+    <h3>Upcoming Projects</h3>
     {% assign counter = '0' %}
     {% for post in site.categories.upcoming %}
       {% if post.title != page.title and counter < '4'%}
         <div class="project">
           <a href="{{post.url}}">
-            <img src="{{post.thumbnail}}" alt="" />
+            <img src="{{post.thumbnail}}" alt="{{post.title}}" title="{{post.title}}" />
           </a>
         </div>
         {% capture counter %}{{ counter | plus:'1' }}{% endcapture %}
