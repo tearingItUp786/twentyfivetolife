@@ -64,12 +64,12 @@ module.exports = function(grunt) {
                       name: "medium",
                       width: '1024px',
                       height: '786px',
-                      aspectRatio: false
+                      aspectRatio: true
                   }, {
                       name: "small",
                       width: '640',
                       height: '480',
-                      aspectRatio: false
+                      aspectRatio: true
                   }],
                   quality: 90
               },
