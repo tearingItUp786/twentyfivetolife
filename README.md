@@ -33,21 +33,21 @@ Files should follow this syntax in order to be processed by Jekyll. All relevant
     categories: upcoming
 
     images:
-     - url: /images/800-medium.jpg
-    alt: Alt text
+    - url: /images/800-medium.jpg
+       alt: Alt text
     - url: /images/1000-medium.jpg
-    alt: Alt text
+      alt: Alt text
     - url: /images/1200-medium.jpg
-    alt: Alt text
+      alt: Alt text
 
     description: Climb 35 flights of stairs at <a href="http://harbourcentre.com/">Vancouver's Harbour Center</a> in support of the Canadian Cancer Society. 100% of proceeds from the event will go directly to cancer research. Participants will first enjoy a warm up sponsored by Steve Nash Fitness, ending with an epic photo opportunity at the top of the Vancouver Lookout!
 
     details:
     - where: test test test test test test test test test test test test test test
-    when: Some day
-    join: Join us!
-    donate: Donate now
-    entrance: By donation
+      when: Some day
+      join: Join us!
+      donate: Donate now
+      entrance: By donation
     ---
 ---
 
