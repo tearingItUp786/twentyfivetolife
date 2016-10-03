@@ -34,7 +34,7 @@ Files should follow this syntax in order to be processed by Jekyll. All relevant
 
     images:
     - url: /images/800-medium.jpg
-       alt: Alt text
+      alt: Alt text
     - url: /images/1000-medium.jpg
       alt: Alt text
     - url: /images/1200-medium.jpg
