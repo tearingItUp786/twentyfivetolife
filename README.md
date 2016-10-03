@@ -70,11 +70,12 @@ I recommend using an image from the images director (maybe 800x800 for the thumb
 
 ## sponsors.yml
 Sponsor thumbnails will always be in the sponsor_thumbnails directory. Follow the below syntax.
+      
       - name: Microsoft
 
-      url: /images/sponsor_thumbnails/Microsoft-Logo-HD.png
+        url: /images/sponsor_thumbnails/Microsoft-Logo-HD.png
 
-      website: https://www.microsoft.com/en-ca/
+        website: https://www.microsoft.com/en-ca/
 
 # Updating the graphs
 In the **js** directory, make changes to the app.js file.
