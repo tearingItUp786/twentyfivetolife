@@ -10,9 +10,17 @@ This project relies on the following technologies and several other dependencies
 
 To get the project up and running the above technologies and their respective dependencies must be installed.
 
+## Update The Config File
+Update the **_config.yml** file to reflect your website. The comments in this file make it quite easy to figure out what you need to change.
+
+## Default Number Of events
+By default, the index.html file will create 7 hexagons in the events grid (as per client instructions) and if you need to create more, simply change line 36 in index.html. If you want 9, change the 6 to an 8:
+
+        {% for num in (amount..6) %}
+
 ## Adding Events
 To add events to the website, add markdown files to the **_posts** directory. The filename needs to be as follows:
-*Year-month-day-filename.md*. For example: **2016-09-10-test.md**.
+*Year-month-day-filename.md*. For example: **2016-09-10-test.md**. The md file with the most recent date will show up first.
 
 ### Post Syntax
 Files should follow this syntax in order to be processed by Jekyll. All relevant info is in the YAML front matter. I recommend using the medium images for the carousel but you can make whatever changes you see fit. The example below shows that you can add whatever html you see fit in the description; I used an a tag to link to a facebook event -- this is probably something you'll want to do.

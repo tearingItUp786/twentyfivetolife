@@ -28,7 +28,8 @@ permalink: none
 # Build settings
 markdown: kramdown
 theme: minima
-exclude: ['node_modules', '.sass-cache', '*.sh']
+exclude: ['node_modules', '.sass-cache', '*.sh', 'Gruntfile.js']
+future: true
 defaults:
   -
     scope:
