@@ -6,12 +6,16 @@ var lastWindowY = 0,
 
 var moneyRaised = 15000,
     totalToRaise = 30000,
-    firstDate = new Date("September 16, 2016"),
-    endDate = new Date("Decemeber 25, 2016"),
+    numberOfEventsCompleted = 0,
+    numberOfEvents = 7,
+    firstDate = new Date('2016-09-12 12:00:00'),
+    endDate = new Date('2016-12-05 12:00:00'),
     today = new Date(),
     oneDay = 24 * 60 * 60 * 1000, // hours*minutes*seconds*milliseconds,
     diffBetweenDays = Math.round(Math.abs((firstDate.getTime() - endDate.getTime()) / (oneDay))),
-    diffBetweenToday = Math.round(Math.abs((today.getTime() - endDate.getTime()) / (oneDay)));
+    diffBetweenToday = Math.round(Math.abs((today.getTime() - endDate.getTime()) / (oneDay))),
+    ratioBetweenDays = diffBetweenToday / diffBetweenDays;
+    // console.log(ratioBetweenDays);
 
 $(document).ready(function() {
     addActiveClassToNav();
@@ -87,7 +91,7 @@ var animateGraphs = function(size, fill, thicknessRatio) {
     });
 
     $('.number-of-events-graph').circleProgress({
-        value: (0),
+        value: numberOfEventsCompleted,
         size: size,
         fill: {
             color: fill
@@ -97,11 +101,11 @@ var animateGraphs = function(size, fill, thicknessRatio) {
         },
         thickness: (thicknessRatio * size)
     }).on('circle-animation-progress', function(event, progress, value) {
-        $(this).find('strong').html(value + '/' + 9);
+        $(this).find('strong').html(value + '/' + numberOfEvents);
     });
 
     $('.days-left').circleProgress({
-        value: 1 - (diffBetweenToday / diffBetweenDays),
+        value: 1 - ratioBetweenDays,
         size: size,
         fill: {
             color: fill
@@ -159,14 +163,14 @@ var toggleNavbar = function() {
 };
 
 function doSomething() {
-    console.log("in do something");
+    // console.log("in do something");
     displayHex();
     ticking = true;
 }
 
 
 function checkVisible(elm) {
-    console.log("Checking visble");
+    // console.log("Checking visble");
     var rect = elm.getBoundingClientRect();
     var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
     return !(rect.bottom < 0 || rect.top - viewHeight >= 40);

@@ -1,7 +1,7 @@
 ---
-title:  "Hipsters for the cure"
-event_date: "October 1, 2016"
-thumbnail: "/images/1000-medium.jpg"
+title:  "Santa's Little Pet Helpers"
+event_date: "TBA"
+thumbnail: "/images/800-medium.jpg"
 
 excerpt: "This is the meta description for the page. Good For SEO."
 

@@ -30,7 +30,7 @@
     <div class="rslides_container">
       <ul class="rslides">
         {% for image in page.images %}
-          <li><img src="{{image.url}}" alt=""></li>
+          <li><img src="{{image.url}}" alt="{{image.alt}}" title="{{image.title}}"></li>
         {% endfor %}
       </ul>
     </div>

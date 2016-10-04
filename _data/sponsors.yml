@@ -1,23 +1,35 @@
 - name: Telus
   url: /images/sponsor_thumbnails/Microsoft-Logo-HD.png
   website: https://www.microsoft.com/en-ca/
+  alt: "Some Relevant Alt Text For Image"
+  image-title: "Some Image Title"
 
 - name: Microsoft
   url: /images/sponsor_thumbnails/Microsoft-Logo-HD.png
   website: https://www.microsoft.com/en-ca/
+  alt: "Some Relevant Alt Text For Image"
+  image-title: "Some Image Title"
 
 - name: Microsoft
   url: /images/sponsor_thumbnails/Microsoft-Logo-HD.png
   website: https://www.microsoft.com/en-ca/
+  alt: "Some Relevant Alt Text For Image"
+  image-title: "Some Image Title"
 
 - name: Microsoft
   url: /images/sponsor_thumbnails/Microsoft-Logo-HD.png
   website: https://www.microsoft.com/en-ca/
+  alt: "Some Relevant Alt Text For Image"
+  image-title: "Some Image Title"
 
 - name: Microsoft
   url: /images/sponsor_thumbnails/telus-logo.png
   website: https://www.microsoft.com/en-ca/
+  alt: "Some Relevant Alt Text For Image"
+  image-title: "Some Image Title"
 
 - name: Microsoft
   url: /images/sponsor_thumbnails/telus-logo.png
   website: https://www.microsoft.com/en-ca/
+  alt: "Some Relevant Alt Text For Image"
+  image-title: "Some Image Title"

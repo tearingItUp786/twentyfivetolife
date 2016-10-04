@@ -28,17 +28,22 @@ Files should follow this syntax in order to be processed by Jekyll. All relevant
 
     thumbnail: "/images/1000-medium.jpg"
 
+    excerpt: "This is the meta description for the page. Good For SEO."
+
     subtitle: "Test&nbsp;Event&nbsp;subtitle"
 
     categories: upcoming
 
     images:
-    - url: /images/800-medium.jpg
-      alt: Alt text
-    - url: /images/1000-medium.jpg
-      alt: Alt text
-    - url: /images/1200-medium.jpg
-      alt: Alt text
+      - url: /images/800-medium.jpg
+        alt: "Alt Text"
+        title: "Title Text"
+      - url: /images/1000-medium.jpg
+        alt: "Alt Text"
+        title: "Title Text"
+      - url: /images/1200-medium.jpg
+        alt: "Alt Text"
+        title: "Title Text"
 
     description: Climb 35 flights of stairs at <a href="http://harbourcentre.com/">Vancouver's Harbour Center</a> in support of the Canadian Cancer Society. 100% of proceeds from the event will go directly to cancer research. Participants will first enjoy a warm up sponsored by Steve Nash Fitness, ending with an epic photo opportunity at the top of the Vancouver Lookout!
 
@@ -66,16 +71,23 @@ I recommend using an image from the images director (maybe 800x800 for the thumb
 
       description: "In 2014, SFU students reached their goal of raising $27,500 for the Canadian Cancer Society! They only had until December 1st to reach this target. Students from various different backgrounds and different upbringings joined together to fight against cancer. Eight different events were hosted throughout the year. You can find a listing of the past events below."
 
-      thumbnail: http://placekitten.com/g/600/600
+      thumbnail: /images/800-small.jpg
+
+      alt: "Some Relevant Alt Text To The Image"
+
 
 ## sponsors.yml
 Sponsor thumbnails will always be in the sponsor_thumbnails directory. Follow the below syntax.
-      
-      - name: Microsoft
 
-        url: /images/sponsor_thumbnails/Microsoft-Logo-HD.png
+    - name: Telus
 
-        website: https://www.microsoft.com/en-ca/
+      url: /images/sponsor_thumbnails/Microsoft-Logo-HD.png
+
+      website: https://www.microsoft.com/en-ca/
+
+      alt: "Some Relevant Alt Text For Image"
+
+      image-title: "Some Image Title"
 
 # Updating the graphs
 In the **js** directory, make changes to the app.js file.
@@ -84,29 +96,14 @@ To updated this graph, make a change to the varialble **moneyRaised** (should be
 
 ### Update Number Of Events graph
 
-To update this graph, make a change to the **value** portion of this javascript function
+To update this graph, make a change to the **numberOfEventsCompleted** variable in app.js
 
----
-    $('.number-of-events-graph').circleProgress({
-        value: (0),
-        size: size,
-        fill: {
-            color: fill
-        },
-        animation: {
-            duration: 1500
-        },
-        thickness: (thicknessRatio * size)
-    }).on('circle-animation-progress', function(event, progress, value) {
-        $(this).find('strong').html(value + '/' + 9);
-    });
----
 
 ## Update Days Left
-This should auto update,, but if my dates are wrong, simply change the dates in the varialbes at the beginning of the jvascript file.
+This should auto update,, but if my dates are wrong, simply change the dates in the varialbes at the beginning of the jvascript file. **The dates have to be in this format or they will not render in firefox**.
 
-    firstDate = new Date("September 16, 2016"),
-    endDate = new Date("Decemeber 25, 2016"),
+    firstDate = new Date('2016-09-12 12:00:00'),
+    endDate = new Date('2016-12-05 12:00:00'),
 
 
 # Create The Website
