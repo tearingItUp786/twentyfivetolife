@@ -13,6 +13,9 @@ To get the project up and running the above technologies and their respective de
 ## Update The Config File
 Update the **_config.yml** file to reflect your website. The comments in this file make it quite easy to figure out what you need to change.
 
+## Update the About Section/Default Home Section
+If you would like to edit the content for these two secitons **DO NOT** edit the index.html. Simply change in the *_includes* folder and update the about.html and default.html. If you would like to update the history/events/sponsors section, seel below
+
 ## Default Number Of events
 By default, the index.html file will create 7 hexagons in the events grid (as per client instructions) and if you need to create more, simply change line 36 in index.html. If you want 9, change the 6 to an 8:
 
