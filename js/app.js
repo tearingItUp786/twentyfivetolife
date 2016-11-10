@@ -48,6 +48,9 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    if (checkVisible(evStart)) {
+        initDisplay();
+    }
 });
 
 var addActiveClassToNav = function() {
@@ -91,7 +94,7 @@ var animateGraphs = function(size, fill, thicknessRatio) {
     });
 
     $('.number-of-events-graph').circleProgress({
-        value: numberOfEventsCompleted,
+        value: (numberOfEventsCompleted / numberOfEvents),
         size: size,
         fill: {
             color: fill
@@ -101,7 +104,7 @@ var animateGraphs = function(size, fill, thicknessRatio) {
         },
         thickness: (thicknessRatio * size)
     }).on('circle-animation-progress', function(event, progress, value) {
-        $(this).find('strong').html(value + '/' + numberOfEvents);
+        $(this).find('strong').html(numberOfEventsCompleted + '/' + numberOfEvents);
     });
 
     $('.days-left').circleProgress({
