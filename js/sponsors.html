@@ -1,0 +1,62 @@
+<div class="sponsors">
+  <h1 class="welcome">The Sponsors Of 25toLife</h1>
+  <div class="hex-sponsor-container">
+    <div class="hex-even">
+      {% if site.data.sponsors | size > 0 %}
+        {% assign amount = 0 %}
+        {% for sponsor in site.data.sponsors %}
+        <div class="hex-sponsor">
+          <svg class="svg-graphic" width="180" height="200" viewBox="0 0 560 645" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1">
+              <g>
+                 <clipPath id="clipping">
+                   <use xlink:href="#hex" />
+                </clipPath>
+              </g>
+
+              <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{sponsor.website}}" transform="">
+                  <polygon id="hex" points="270,0 0,160 0,485 270,645 560,485 560,160" style="fill:#fff;stroke:rgba(0,0,0,0.3);stroke-width:2"></polygon>
+                  <image clip-path="url(#clipping)" x="50" y="50" height="80%" width="80%" xlink:href="{{sponsor.url}}" preserveAspectRatio="xMidYMid meet" style="opacity: 1;" alt="{{sponsor.alt}}" title="{{sponsor.image-title}}"></image>
+                  <figcaption></figcaption>
+              </a>
+          </svg>
+        </div>
+        {% capture amount %}{{ amount | plus:1 }}{% endcapture %}
+        {% endfor %}
+      {% else %}
+        <h1>It appears we have no sponsors...yet!</h1>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+<div class="sponsors">
+  <h1 class="welcome">Additional thanks to..</h1>
+  <div class="hex-sponsor-container">
+    <div class="hex-even">
+      {% if site.data.sponsors | size > 0 %}
+        {% assign amount = 0 %}
+        {% for sponsor in site.data.minor %}
+        <div class="hex-sponsor">
+          <svg class="svg-graphic" width="180" height="200" viewBox="0 0 560 645" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1">
+              <g>
+                 <clipPath id="clipping">
+                   <use xlink:href="#hex" />
+                </clipPath>
+              </g>
+
+              <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{sponsor.website}}" transform="">
+                  <polygon id="hex" points="270,0 0,160 0,485 270,645 560,485 560,160" style="fill:#fff;stroke:rgba(0,0,0,0.3);stroke-width:2"></polygon>
+                  <image clip-path="url(#clipping)" x="50" y="50" height="80%" width="80%" xlink:href="{{sponsor.url}}" preserveAspectRatio="xMidYMid meet" style="opacity: 1;" alt="{{sponsor.alt}}" title="{{sponsor.image-title}}"></image>
+                  <figcaption></figcaption>
+              </a>
+          </svg>
+        </div>
+        {% capture amount %}{{ amount | plus:1 }}{% endcapture %}
+        {% endfor %}
+      {% else %}
+        <h1>It appears we have no sponsors...yet!</h1>
+      {% endif %}
+    </div>
+  </div>
+</div>

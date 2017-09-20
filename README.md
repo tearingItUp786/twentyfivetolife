@@ -7,8 +7,12 @@ This project relies on the following technologies and several other dependencies
 * [Node](https://nodejs.org/en/ "Node")
 * [Jekyll](https://jekyllrb.com/ "Jekyll CMS")
 * [Grunt](http://gruntjs.com/ "Grunt")
+* [ImageMagick](https://www.imagemagick.org/script/index.php)
 
 To get the project up and running the above technologies and their respective dependencies must be installed.
+Once you have installed the dependenices, cd into the project directory and run:
+* npm install
+* bundle install
 
 ## Update The Config File
 Update the **_config.yml** file to reflect your website. The comments in this file make it quite easy to figure out what you need to change.
@@ -68,13 +72,13 @@ Files should follow this syntax in order to be processed by Jekyll. All relevant
 ---
 
 # Images
-All general purpose images should be added to the originals directory. **Sponsor Logos** must be added to the **sponsor_logos** directory
+All general purpose images should be added to the **originals** directory. **Sponsor Logos** must be added to the **sponsor_logos** directory
 
 # History And Sponsors
 ### These files are stored in the **_data** directory.
 ## History
 Make the necessary adjustments to the content in the history.yml file. Here is the syntax for each history entry.
-I recommend using an image from the images director (maybe 800x800 for the thumbnail).
+I recommend using an image from the images directory (maybe 800x800 for the thumbnail).
 
     - year: 2013
 
@@ -103,7 +107,7 @@ Sponsor thumbnails will always be in the sponsor_thumbnails directory. Follow th
 # Updating the graphs
 In the **js** directory, make changes to the app.js file.
 ### Update Money Raised graph
-To updated this graph, make a change to the varialble **moneyRaised** (should be on line 7).
+To updated this graph, make a change to the varialble **moneyRaised** (should be on line 235).
 
 ### Update Number Of Events graph
 
@@ -113,9 +117,9 @@ To update this graph, make a change to the **numberOfEventsCompleted** variable 
 ## Update Days Left
 This should auto update,, but if my dates are wrong, simply change the dates in the varialbes at the beginning of the jvascript file. **The dates have to be in this format or they will not render in firefox**.
 
-    firstDate = new Date('2016-09-12 12:00:00'),
-    endDate = new Date('2016-12-05 12:00:00'),
-
-
 # Create The Website
 After you've done what you need to do, simply execute the build script that I wrote. **./build.sh** and this will generate the site files.
+
+# Troubleshooting/problems 
+If you find that the website is not reflecting the changes you made, it can be because the app.js file was cached by the browser. To force the browser to grab a new version of the file, rename *app.js* to something like *app_new.js*   
+**MAKE SURE THAT YOU CHANGE THE RFERENCE IN FOOTER.HTML TO BE app_new.js** as well.
