@@ -17,7 +17,8 @@
     }
 
     function addActiveClassToNav() {
-      if (location.hash !== null) {
+      if (location.hash != '') {
+        console.log(`location hash is ${location.hash}`);
         removeNavActive()
         var myLocation = location.hash.slice(1)
         nav_ids.forEach(function(e) {
@@ -40,7 +41,8 @@
     }
 
     function mobileNavClick(evt) {
-      //console.log('In mobile')
+      evt.preventDefault();
+      console.log('In mobile')
       if ($nav.hasClass('open')) {
         $nav.removeClass('open')
         $mobile_nav.removeClass('active-nav-button')
@@ -229,16 +231,16 @@
     return publicAPI
   })()
 
-  var moneyRaised = 15000,
-    totalToRaise = 30000,
-    numberOfEventsCompleted = 2,
-    numberOfEvents = 7,
-    firstDate = moment([2017, 08, 11]),
-    endDate = moment([2017, 11, 28]),
-    today = moment(),
-    diffBetweenDays = endDate.diff(firstDate, 'days'),
-    diffBetweenToday = endDate.diff(today, 'days'),
-    ratioBetweenDays = diffBetweenToday / diffBetweenDays
+  var moneyRaised = 50,
+  totalToRaise = 30000,
+  numberOfEventsCompleted = 0,
+  numberOfEvents = 7,
+  firstDate = moment([2017, 07, 14]),
+  endDate = moment([2017, 11, 04]),
+  today = moment(),
+  diffBetweenDays = endDate.diff(firstDate, 'days'),
+  diffBetweenToday = endDate.diff(today, 'days'),
+  ratioBetweenDays = diffBetweenToday / diffBetweenDays
 
   $(document).ready(function() {
     NavBar.init({

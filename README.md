@@ -26,8 +26,8 @@ By default, the index.html file will create 7 hexagons in the events grid (as pe
         {% for num in (amount..6) %}
 
 ## Adding Events
-To add events to the website, add markdown files to the **_posts** directory. The filename needs to be as follows:
-*Year-month-day-filename.md*. For example: **2016-09-10-test.md**. The md file with the most recent date will show up first.
+To add events to the website, add markdown files to the **_posts** directory. The filename **needs** to be as follows:
+*Year-month-day-filename.md*. For example: **2016-09-10-test-event-i-want.md**. The md file with the most recent date will show up first.
 
 ### Post Syntax
 Files should follow this syntax in order to be processed by Jekyll. All relevant info is in the YAML front matter. I recommend using the medium images for the carousel but you can make whatever changes you see fit. The example below shows that you can add whatever html you see fit in the description; I used an a tag to link to a facebook event -- this is probably something you'll want to do.
@@ -41,7 +41,7 @@ Files should follow this syntax in order to be processed by Jekyll. All relevant
 
     event_date: "October 1, 2016"
 
-    thumbnail: "/images/1000-medium.jpg"
+    thumbnail: "/images/a-sample-image-small.jpg"
 
     excerpt: "This is the meta description for the page. Good For SEO."
 
@@ -50,10 +50,10 @@ Files should follow this syntax in order to be processed by Jekyll. All relevant
     categories: upcoming
 
     images:
-      - url: /images/800-medium.jpg
+      - url: /images/another-sample-image-medium.jpg
         alt: "Alt Text"
         title: "Title Text"
-      - url: /images/1000-medium.jpg
+      - url: /images/some_random_name-medium.jpg
         alt: "Alt Text"
         title: "Title Text"
       - url: /images/1200-medium.jpg

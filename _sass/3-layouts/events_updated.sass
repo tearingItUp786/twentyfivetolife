@@ -1,0 +1,78 @@
+.container
+  +outer-container
+  margin-top: 100px
+
+  .event-title
+    border-bottom: 1px solid black
+    padding-bottom: 10px
+    line-height: 1.4em
+    small
+      font-size: 55%
+      color: $light-grey
+
+  .content
+    @include media($largedesktop)
+      +span-columns(5 of 12)
+    @include media($desktop)
+      +span-columns(5 of 12)
+    @include media($tablet)
+      +span-columns(12 of 12)
+
+    a
+      text-decoration: none
+
+      &:hover 
+        text-decoration: underline
+    
+    table
+      border-collapse: collapse
+      width: 100%
+      tbody
+        font-size: +em(20px)
+        th
+          border: 1px solid #dddddd
+          padding: 5px
+          text-align: left
+        td
+          border: 1px solid #dddddd
+          padding: 5px
+          color: $dark-grey
+
+  .owl-carousel 
+    @include media($largedesktop)
+      +shift(0)
+      +span-columns(7 of 12)
+    @include media($desktop)
+      +shift(0)
+      +span-columns(7 of 12)
+    @include media($tablet)
+      +shift(0)
+      +span-columns(12 of 12)
+
+
+.related-projects
+  +outer-container
+  margin-top: 100px
+  border-top: 1px soild black
+
+  h3
+    border-bottom: 1px solid $light-grey
+
+  .project
+    cursor: pointer
+    @include media($largedesktop)
+      +span-columns(3 of 12)
+      +omega(5n)
+    @include media($desktop)
+      +span-columns(3 of 12)
+      +omega(5n)
+    @include media($tablet)
+      +span-columns(6 of 12)
+      +omega(3n)
+    @include media($mobile)
+      +span-columns(6 of 12)
+
+    img
+      +size(100% auto)
+      max-height: 275px
+

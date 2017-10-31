@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+{% include head_event.html %}
+{% include navbar_event.html %}
+<body>
+  
+  <div class="container">
+    <div class="owl-carousel owl-theme">
+        {% for image in page.images %}
+        <div><img src="{{image.url}}" alt="{{image.alt}}" title="{{image.title}}"></div>
+        {% endfor %}
+      </div>
+    <div class="content">
+        <h1 class="event-title">
+            {% if page.categories contains 'completed' %}
+            <span style="color: red;">THIS EVENT HAS ALREADY PASSED</span> <br/>
+            {% endif %}
+            {{page.title}}
+            <small>{{page.subtitle}}</small>
+          </h1>
+        <p class="event-description">{{page.description}}</p>
+        <table>
+            <tbody>
+            {% for detail in page.details %}
+    
+              <tr><th>Where</th><td>{{detail.where}}</td></tr>
+              <tr><th>When</th><td>{{detail.when}}</td></tr>
+              <tr><th>Join</th><td>{{detail.join}}</td></tr>
+              <tr><th>Donate</th><td>{{detail.donate}}</td></tr>
+              <tr><th>Entrance</th><td>{{detail.entrance}}</td></tr>
+            </tbody>
+            {% endfor %}
+          </table>
+    </div>
+  </div>
+  
+  <div class="container">
+  </div>
+
+  <div class="related-projects">
+    <h3>Upcoming Projects</h3>
+    {% assign counter = '0' %}
+    {% for post in site.categories.upcoming %}
+      {% if post.title != page.title and counter < '4'%}
+        <div class="project">
+          <a href="{{post.url}}">
+            <img src="{{post.thumbnail}}" alt="{{post.title}}" title="{{post.title}}" />
+          </a>
+        </div>
+        {% capture counter %}{{ counter | plus:'1' }}{% endcapture %}
+      {% endif %}
+    {% endfor %}
+  </div>
+{% include footer_event.html %}
+</body>
+</html>
